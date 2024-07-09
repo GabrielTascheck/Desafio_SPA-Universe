@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root
+{
+  font-size: 6.25%;
+  font-family: 'Roboto', sans-serif;
+
+  --bg-url: url(./assets/bg-home.png);
+  --span-color: white;
+  --p-color: #E1E1E6;
+  --header-color: #C4C4CC;
+  --h-color: #E1E1E6;
+  --button-text: white;
+  --button-text-hover: #02799D;
+
+}
+
+body
+{
+  background: url(./assets/bg-home.png) no-repeat bottom center/cover;
+  /* background-position: -100rem 0 0 0; */
+  height: 100vh;
+  font-size: 16rem;
+  color: white;
+}
+
+
+header ul {
+  padding: 40rem 0 40rem 72rem; /* Mantido conforme seu código */
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: calc(32rem * 2); /* Mantido conforme seu código */
+}
+
+header ul li p {
+  font-size: 22rem; /* Mantido conforme seu código */
+  margin-inline: 10rem; /* Mantido conforme seu código */
+  transition: font-weight 0.3s ease, transform 0.3s ease; /* Adicionando transição para suavizar a mudança de estilo */
+}
+
+header ul li p:hover {
+  font-weight: bold;
+  transform: scale(1.09);
+}
+
+main 
+{
+  margin: 63rem 102rem auto 102rem;
+}
+
+#grid
+{
+  display: grid;
+  place-items: center;
+  margin-top: 109rem;
+  gap: 24rem;
+}
+
+#grid h1
+{
+  font-size: 48rem;
+  color: var(--h-color);
+}
+
+#grid button
+{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14rem;
+  line-height: 24rem;
+  padding: 12rem 32rem;
+  color: var(--button-text);
+  border-radius: 5rem;
+  border-color: white;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.2s;
+}
+
+#grid button:hover
+{
+  background-color: white;
+  color: var(--button-text-hover)
+}
+
+main h2
+{
+  font-size: 48rem;
+  color: var(--h-color);
+  margin-bottom: 16rem;
+}
+
+main p
+{
+  line-height: 160%;
+  width: 648rem;
+  font-size: 18rem;
+  color: var(--p-color);
+}
