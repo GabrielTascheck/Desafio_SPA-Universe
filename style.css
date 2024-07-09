@@ -20,10 +20,17 @@
 
 }
 
+.universe {
+  --bg-url: url(./assets/bg-universe.png)
+}
+
+.exploration {
+  --bg-url: url(./assets/bg-exploration.png)
+}
+
 body
 {
-  background: url(./assets/bg-home.png) no-repeat bottom center/cover;
-  /* background-position: -100rem 0 0 0; */
+  background: var(--bg-url) no-repeat bottom center/cover;
   height: 100vh;
   font-size: 16rem;
   color: white;
@@ -31,20 +38,22 @@ body
 
 
 header ul {
-  padding: 40rem 0 40rem 72rem; /* Mantido conforme seu código */
+  padding: 40rem 0 40rem 72rem; 
   display: flex;
   list-style: none;
   align-items: center;
-  gap: calc(32rem * 2); /* Mantido conforme seu código */
+  gap: calc(32rem * 2); 
 }
 
-header ul li p {
-  font-size: 22rem; /* Mantido conforme seu código */
-  margin-inline: 10rem; /* Mantido conforme seu código */
+header ul li a {
+  font-size: 22rem; 
+  margin-inline: 5rem; 
+  color: var(--p-color);
+  text-decoration: 0;
   transition: font-weight 0.3s ease, transform 0.3s ease; /* Adicionando transição para suavizar a mudança de estilo */
 }
 
-header ul li p:hover {
+header ul li a:hover {
   font-weight: bold;
   transform: scale(1.09);
 }
