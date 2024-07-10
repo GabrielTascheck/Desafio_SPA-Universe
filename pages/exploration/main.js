@@ -1,5 +1,9 @@
+import links from '../../index.js'
+
 export default function(){
   const container = document.createElement('div');
+  
+  links.exploration.classList.add('span')
 
   const template = `
   <h2>Exploração</h2>

@@ -28,6 +28,11 @@
   --bg-url: url(./assets/bg-exploration.png)
 }
 
+.span {
+  font-weight: bold;
+  text-decoration:underline;
+}
+
 body
 {
   background: var(--bg-url) no-repeat bottom center/cover;

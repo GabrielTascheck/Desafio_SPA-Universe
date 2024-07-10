@@ -1,5 +1,9 @@
+import links from '../../index.js'
+
 export default function(){
   const container = document.createElement('div');
+
+  links.home.classList.add('span')
 
   const template = `
   <div id="grid">

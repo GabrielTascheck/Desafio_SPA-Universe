@@ -1,5 +1,9 @@
+import links from '../../index.js'
+
 export default function(){
   const container = document.createElement('div');
+
+  links.universe.classList.add('span')
 
   const template = `
   <h2>O Universo</h2>
