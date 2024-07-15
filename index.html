@@ -7,19 +7,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SPA Universe</title>
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="index.js" defer></script>
+  <!-- <script type="module" src="index.js" defer></script> -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body class="">
   <header>
     <ul>
-      <li><a href="/#"><img src="./assets/logo.svg" alt="logo"></a></li>
-      <li><a class="span home" href="/#">Home</a></li>
-      <li><a class="universe" href="/#universe">O Universo</a></li>
-      <li><a class="exploration" href="/#exploration">Exploração</a></li>
+      <li><a href="/" onclick="route()"><img src="./assets/logo.svg" alt="logo"></a></li>
+      <li><a href="/home" onclick="route()">Home</a></li>
+      <li><a href="/universe" onclick="route()">O Universo</a></li>
+      <li><a href="/exploration" onclick="route()">Exploração</a></li>
     </ul>
   </header>
   <main id="app">
   </main>
 </body>
+
+<script>
+
+  const routes = {
+  "/exploration": "/pages/exploration.html",
+  "/home": "/pages/home.html",
+  "/universe": "/pages/universe.html",
+  404: "/pages/404.html",
+  }
+
+  function route(event){
+    event = event || window.event
+    event.preventDefault()
+
+    // const target = event.currentTarget;
+    // const href = target.getAttribute('href');
+    // event.currentTarget.getAttribute('href')
+
+    window.history.pushState({}, "", event.currentTarget.getAttribute('href'))
+    //Antes estava event.target.href ... porém não funcionava quando pressionava o logo para redirecionar.
+
+    handle()
+  }
+
+  function handle(){
+
+    const pathname = window.location.pathname
+    // const { pathname } = window.location
+    //pode ser usado pra desestruturar mais itens
+    /*
+      const { pathname, href, host, port} = window.location
+    */
+
+    const route = routes[pathname] || routes[404]
+
+    fetch(route)
+    .then(data => data.text())
+    // .then((data) => {
+    //   return data.text
+    // })
+    .then(html => console.log(html))
+      
+
+    console.log(route)
+  }
+</script>
 </html>

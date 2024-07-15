@@ -1,50 +1,22 @@
-import home from './pages/home.js'
-import universe from './pages/universe.js'
-import exploration from './pages/exploration.js'
 
-const main = document.querySelector("#app")
-
-const links = {
-  nav: document.querySelectorAll('a'),
-  home: document.querySelector('.home'),
-  universe: document.querySelector('.universe'),
-  exploration: document.querySelector('.exploration'),
-} 
-
-export default links;
-
-const init = () => {
-  window.addEventListener('hashchange', () => {
-
-    main.innerHTML = ''
-
-    removeSpan()
-
-    switch(window.location.hash){
-      case "":
-        main.appendChild(home());
-        break
-      case "#universe":
-        main.appendChild(universe())
-        break
-      case "#exploration":
-        main.appendChild(exploration())
-        break
-      default:
-        main.appendChild(home());//erro/não encontrado
-        break
-    }
-  })
+const routes = {
+  "/exploration": "/pages/exploration.html",
+  "/home": "/pages/home.html",
+  "/universe": "/pages/universe.html",
+  404: "/pages/404.html",
 }
 
-function removeSpan(){
-  links.nav.forEach(link => {
-    link.classList.remove('span');
-  });
+function route(event){
+  event = event || window.event
+  event.preventDefault()
+
+  window.history.pushState()
+
+  handle()
 }
 
-window.addEventListener("load", () => {
-  console.log("oi")
-  main.appendChild(home());
-  init()
-})
+function handle(){
+  const pathName = window.location.pathname
+
+  
+}
