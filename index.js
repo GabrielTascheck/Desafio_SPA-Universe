@@ -46,4 +46,5 @@ function removeSpan(){
 window.addEventListener("load", () => {
   main.appendChild(home());
   init()
+  links.home.click()
 })
