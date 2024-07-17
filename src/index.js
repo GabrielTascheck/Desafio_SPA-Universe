@@ -20,5 +20,5 @@ router.handle()
 
 window.onpopstate = () => router.handle() //fazer funcionar a setinha funcionar
 window.route = () => router.route() //fazer o onclick do html funcionar 
-homeButton.click() //acho que vai sair
+// homeButton.click() //acho que vai sair
 
